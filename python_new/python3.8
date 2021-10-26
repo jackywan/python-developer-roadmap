@@ -1,0 +1,36 @@
+新的特性
+
+赋值表达式
+新增的语法 := 可在表达式内部为变量赋值。 它被昵称为“海象运算符”因为它很像是 海象的眼睛和长牙。
+
+if (n := len(a)) > 10:
+    print(f"List is too long ({n} elements, expected <= 10)")
+    
+仅限位置形参
+在下面的例子中，形参 a 和 b 为仅限位置形参，c 或 d 可以是位置形参或关键字形参，而 e 或 f 要求为关键字形参:
+
+def f(a, b, /, c, d, *, e, f):
+    print(a, b, c, d, e, f)
+
+f(10, 20, 30, d=40, e=50, f=60)
+
+用于已编译字节码文件的并行文件系统缓存
+新增的 PYTHONPYCACHEPREFIX 设置 (也可使用 -X pycache_prefix) 可将隐式的字节码缓存配置为使用单独的并行文件系统树，而不是默认的每个源代码目录下的 __pycache__ 子目录。
+
+缓存的位置会在 sys.pycache_prefix 中报告 (None 表示默认位置即 __pycache__ 子目录)。
+
+调试构建使用与发布构建相同的 ABI
+
+f-字符串支持 = 用于自动记录表达式和调试文档
+user = 'eric_idle'
+member_since = date(1975, 7, 31)
+f'{user=} {member_since=}'
+"user='eric_idle' member_since=datetime.date(1975, 7, 31)"
+通常的 f-字符串格式说明符 允许更细致地控制所要显示的表达式结果:
+
+PEP 578: Python 运行时审核钩子
+
+PEP 587: Python 初始化配置
+
+具有外部数据缓冲区的 pickle 协议5
+
