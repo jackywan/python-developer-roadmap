@@ -1,0 +1,41 @@
+新的语法特性：
+
+PEP 584，为 dict 增加合并运算符；
+
+PEP 585，标准多项集中的类型标注泛型。
+
+PEP 614，放宽对装饰器的语法限制。
+
+新的内置特性：
+
+PEP 616，移除前缀和后缀的字符串方法。
+
+标准库中的新特性:
+
+PEP 593，灵活函数和变量注解；
+
+添加了 os.pidfd_open() 以允许不带竞争和信号的进程管理。
+
+解释器的改进:
+
+PEP 573，从 C 扩展类型的方法快速访问模块状态；
+
+PEP 617，CPython 现在使用基于 PEG 的新解析器；
+
+一些 Python 内置类型（range、tuple、set、frozenset、list、dict）现已使用 PEP 590 vectorcall 加速；
+
+垃圾回收不会因恢复的对象而阻塞；
+
+一些 Python 模块（_abc、audioop、_bz2、_codecs、_contextvars、_crypt、_functools、_json、_locale、math、operator、resource、time、_weakref）现已使用 PEP 489 中定义的多段初始化；
+
+一些标准库模块 (audioop、ast、grp、_hashlib、pwd、_posixsubprocess、random、select、struct、termios、zlib) 现已使用 PEP 384 中定义的稳定 ABI。
+
+新的库模块：
+
+PEP 615，标准库的 zoneinfo 模块现已支持 IANA 时区数据库；
+
+图的拓扑排序实现现在已由新的 graphlib 模块提供。
+
+发布进程的变化:
+
+PEP 602，CPython 采用年度发布周期。
