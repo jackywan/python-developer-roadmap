@@ -1,0 +1,37 @@
+新的语法特性：
+
+PEP 492, 使用 async 和 await 语法实现协程。
+PEP 465, 新的矩阵乘法运算符: a @ b.
+PEP 448, additional unpacking generalizations.
+新的库模块：
+
+typing: PEP 484 – 类型提示.
+zipapp: PEP 441 改进Python ZIP应用程序支持.
+新的内置特性：
+
+bytes % args, bytearray % args: PEP 461 – Adding % formatting to bytes and bytearray.
+New bytes.hex(), bytearray.hex() and memoryview.hex() methods. (Contributed by Arnon Yaari in bpo-9951.)
+memoryview now supports tuple indexing (including multi-dimensional). (Contributed by Antoine Pitrou in bpo-23632.)
+Generators have a new gi_yieldfrom attribute, which returns the object being iterated by yield from expressions. (Contributed by Benno Leslie and Yury Selivanov in bpo-24450.)
+A new RecursionError exception is now raised when maximum recursion depth is reached. (Contributed by Georg Brandl in bpo-19235.)
+CPython 实现的改进：
+
+When the LC_TYPE locale is the POSIX locale (C locale), sys.stdin and sys.stdout now use the surrogateescape error handler, instead of the strict error handler. (Contributed by Victor Stinner in bpo-19977.)
+.pyo files are no longer used and have been replaced by a more flexible scheme that includes the optimization level explicitly in .pyc name. (See PEP 488 overview.)
+Builtin and extension modules are now initialized in a multi-phase process, which is similar to how Python modules are loaded. (See PEP 489 overview.)
+标准库中的重大改进：
+
+collections.OrderedDict is now implemented in C, which makes it 4 to 100 times faster.
+The ssl module gained support for Memory BIO, which decouples SSL protocol handling from network IO.
+The new os.scandir() function provides a better and significantly faster way of directory traversal.
+functools.lru_cache() has been mostly reimplemented in C, yielding much better performance.
+The new subprocess.run() function provides a streamlined way to run subprocesses.
+The traceback module has been significantly enhanced for improved performance and developer convenience.
+安全改进：
+
+SSLv3 is now disabled throughout the standard library. It can still be enabled by instantiating a ssl.SSLContext manually. (See bpo-22638 for more details; this change was backported to CPython 3.4 and 2.7.)
+HTTP cookie parsing is now stricter, in order to protect against potential injection attacks. (Contributed by Antoine Pitrou in bpo-22796.)
+Windows改进：
+
+A new installer for Windows has replaced the old MSI. See 在Windows上使用 Python for more information.
+Windows builds now use Microsoft Visual C++ 14.0, and extension modules should use the same.
