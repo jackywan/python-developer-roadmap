@@ -1,6 +1,17 @@
-新的语法特性：
+新的语法：
 
 PEP 563，类型标注延迟求值。
+class C:
+    @classmethod
+    def from_string(cls, source: str) -> C:
+        ...
+
+    def validate_b(self, obj: B) -> bool:
+        ...
+
+class B:
+    ...
+    
 
 向后不兼容的语法更改：
 
@@ -50,8 +61,8 @@ C API 的改进：
 
 PEP 539，用于线程本地存储的新 C API
 
-文档的改进：
+新增模块
+contextvars
+dataclasses
+importlib.resources
 
-PEP 545, Python 文档翻译
-
-新的文档翻译：Japanese，French 和 Korean。
