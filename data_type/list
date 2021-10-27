@@ -1,1 +1,52 @@
-num = ['one', 'two', 'three']
+la = ['1', '2', '3', '3']
+lb = ['4', '5', '6', '6']
+
+转dict
+dict(zip(la, lb))
+dict([la, lb])
+
+转tuple
+tuple(la)
+
+使用zip
+zip(la, lb)
+
+检测元素
+'1' in la
+
+合并
+la + lb
+la.extend(lb)
+
+删除重复元素
+list(set(la))
+
+排序
+sorted(la)
+
+扁平化
+浅展平
+>>> original_list = [[1, 2], [3, 4]]
+>>> flat_list = [item for l in original_list for item in l]
+
+访问元素
+>>> import itertools
+>>> original_list = [[1, 2], [3, 4]] 
+>>> iterator = itertools.chain(*original_list)
+>>> for item in iterator:
+...   print(item)
+
+深度展平
+>>> from pandas.core.common import flatten
+>>> original_list = [[1, 2], [3, 4]]  
+>>> flat_list = list(flatten(original_list))
+>>> flat_list
+[1, 2, 3, 4]
+
+深度展平
+>>> from iteration_utilities import deepflatten
+>>> deeply_nested_list = [[[1, 2], 3], [4, 5, 6]]
+>>> flat_list = list(deepflatten(deeply_nested_list))
+>>> flat_list
+[1, 2, 3, 4, 5, 6]
+
