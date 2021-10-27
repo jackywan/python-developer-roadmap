@@ -1,1 +1,31 @@
-b = '123'
+赋值
+name = 'michael(兵哥)'
+
+空检测
+name is not None
+
+删除空格
+name.strip()
+
+转数组
+name.split('(')
+
+检测子串
+'michael' in name
+
+提取子串
+re.findall(r'\((.*?)\)', name)
+
+转换大写
+name.upper()
+
+计算字节数
+len(name.encode('utf-8'))
+
+文本编解码
+name.encode('utf-8')
+
+转换字节串
+bytes(name, encoding='utf8')
+
+
