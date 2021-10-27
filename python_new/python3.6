@@ -1,14 +1,34 @@
 新的语法特性：
 
 PEP 498, 格式化的字符串文字
+>>> width = 10
+>>> precision = 4
+>>> value = decimal.Decimal("12.34567")
+>>> f"result: {value:{width}.{precision}}"
 
 PEP 515, 数字文字中的下划线。
+>>> 1_000_000_000_000_000
+1000000000000000
+>>> 0x_FF_FF_FF_FF
+4294967295
 
-PEP 526 , 变量注释的语法。
+PEP 526 , 标注变量类型的语法
+primes: List[int] = []
 
+captain: str  # Note: no initial value!
+
+class Starship:
+    stats: Dict[str, int] = {}
+    
 PEP 525, 异步生成器。
-
+async def ticker(delay, to):
+    """Yield numbers from 0 to *to* every *delay* seconds."""
+    for i in range(to):
+        yield i
+        await asyncio.sleep(delay)
+        
 PEP 530: 异步推导。
+result = [i async for i in aiter() if i % 2]
 
 新的库模块：
 
