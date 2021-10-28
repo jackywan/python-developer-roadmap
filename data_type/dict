@@ -1,1 +1,8 @@
 week_day = {'Mon':'1', 'Tue': '2'}
+
+dict->list
+
+dict->tuple
+
+dict->merge
+
